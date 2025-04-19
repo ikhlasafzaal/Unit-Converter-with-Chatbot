@@ -1,0 +1,140 @@
+/* Global Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #c99eae;  /* Light Pink Background */
+    margin: 0;
+    padding: 0;
+    color: #1b4b25;  /* green text for readability */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+/* Streamlit Container */
+.stApp {
+    padding: 40px;
+    max-width: 1000px;
+    margin: 20px auto;
+    background-color: #f7d8e5;  /* White background for the main content */
+    border-radius: 15px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Title Styling */
+.stTitle {
+    color: #d5006d;  /* Dark Pink Color for the title */
+    font-size: 36px;
+    font-weight: 600;
+    margin-bottom: 30px;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+/* Selectbox & Inputs */
+.stSelectbox, .stNumberInput {
+    padding: 12px;
+    border: 2px solid #ccc;  /* Subtle border for selectbox */
+    border-radius: 8px;
+    width: 100%;
+    margin-bottom: 20px;
+    font-size: 16px;
+    background-color: #f9f9f9;
+    color: #333;
+    transition: border-color 0.3s ease;
+}
+
+.stSelectbox:focus, .stNumberInput:focus {
+    border-color: #d5006d;  /* Highlighted border color when focused */
+}
+
+/* Button Styling */
+.stButton {
+    background-color: #ab5576;  /* Dark Pink color for the button */
+    color: rgb(220, 207, 207);
+    font-weight: bold;
+    padding: 14px 28px;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-sizing: border-box;
+}
+
+.stButton:hover {
+    background-color: #9a4e70;  /* Slightly darker dark pink on hover */
+    transform: translateY(-2px); /* Lift effect */
+}
+
+.stButton:active {
+    transform: translateY(0);  /* Reset lift effect on click */
+}
+
+/* Chatbot Styling */
+.stMessage {
+    background-color: #f1f1f1;  /* Soft background for messages */
+    border-radius: 10px;
+    padding: 15px;
+    margin: 15px 0;
+    font-size: 16px;
+    max-width: 75%;
+    box-sizing: border-box;
+}
+
+.stUserMessage {
+    background-color: #d5006d; /* Dark Pink for user message */
+    color: white;
+    text-align: right;  /* Align user messages to the right */
+    margin-left: 25%;
+    box-sizing: border-box;
+}
+
+.stBotMessage {
+    background-color: #e3e3e3;  /* Light grey for bot messages */
+    color: #333;
+    text-align: left;  /* Align bot messages to the left */
+    margin-right: 25%;
+    box-sizing: border-box;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .stApp {
+        padding: 20px;
+    }
+
+    .stTitle {
+        font-size: 28px;
+    }
+
+    .stSelectbox, .stNumberInput {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .stButton {
+        padding: 12px 24px;
+        font-size: 14px;
+    }
+
+    .stMessage {
+        max-width: 100%;
+    }
+
+    .stUserMessage, .stBotMessage {
+        margin-left: 0;
+        margin-right: 0;
+        text-align: left;
+        width: 100%;
+    }
+
+    /* Title styling adjustment on mobile */
+    .stTitle {
+        font-size: 24px;
+    }
+}
