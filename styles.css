@@ -1,140 +1,186 @@
+/* Professional Color Scheme */
+:root {
+    --primary-color: #2c3e50;       /* Dark blue-gray - professional primary */
+    --secondary-color: #3498db;     /* Bright blue - for accents */
+    --accent-color: #e74c3c;        /* Coral red - for important actions */
+    --background-color: #f8f9fa;    /* Light gray - clean background */
+    --card-color: #ffffff;          /* White - for content containers */
+    --text-color: #2c3e50;          /* Dark text for readability */
+    --text-light: #7f8c8d;          /* Gray for secondary text */
+    --success-color: #27ae60;       /* Green - for positive actions */
+}
+
 /* Global Styles */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #c99eae;  /* Light Pink Background */
+    background-color: var(--background-color);
     margin: 0;
     padding: 0;
-    color: #1b4b25;  /* green text for readability */
+    color: var(--text-color);
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     box-sizing: border-box;
+    line-height: 1.6;
 }
 
 /* Streamlit Container */
 .stApp {
-    padding: 40px;
+    padding: 2rem;
     max-width: 1000px;
     margin: 20px auto;
-    background-color: #f7d8e5;  /* White background for the main content */
-    border-radius: 15px;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    background-color: var(--card-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
     width: 100%;
     box-sizing: border-box;
 }
 
 /* Title Styling */
 .stTitle {
-    color: #d5006d;  /* Dark Pink Color for the title */
-    font-size: 36px;
+    color: var(--primary-color);
+    font-size: 2rem;
     font-weight: 600;
-    margin-bottom: 30px;
+    margin-bottom: 1.5rem;
     text-align: center;
-    letter-spacing: 1px;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--secondary-color);
 }
 
-/* Selectbox & Inputs */
-.stSelectbox, .stNumberInput {
-    padding: 12px;
-    border: 2px solid #ccc;  /* Subtle border for selectbox */
-    border-radius: 8px;
+/* Input Fields */
+.stSelectbox, .stNumberInput, .stTextInput {
+    padding: 0.75rem;
+    border: 1px solid #dfe6e9;
+    border-radius: 4px;
     width: 100%;
-    margin-bottom: 20px;
-    font-size: 16px;
-    background-color: #f9f9f9;
-    color: #333;
-    transition: border-color 0.3s ease;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    background-color: var(--card-color);
+    color: var(--text-color);
+    transition: all 0.3s ease;
 }
 
-.stSelectbox:focus, .stNumberInput:focus {
-    border-color: #d5006d;  /* Highlighted border color when focused */
+.stSelectbox:focus, .stNumberInput:focus, .stTextInput:focus {
+    border-color: var(--secondary-color);
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
 }
 
 /* Button Styling */
 .stButton {
-    background-color: #ab5576;  /* Dark Pink color for the button */
-    color: rgb(220, 207, 207);
-    font-weight: bold;
-    padding: 14px 28px;
-    border-radius: 50px;
+    background-color: var(--secondary-color);
+    color: white;
+    font-weight: 500;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
     border: none;
     cursor: pointer;
     width: 100%;
     text-align: center;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    box-sizing: border-box;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 .stButton:hover {
-    background-color: #9a4e70;  /* Slightly darker dark pink on hover */
-    transform: translateY(-2px); /* Lift effect */
+    background-color: #2980b9;
+    transform: translateY(-1px);
 }
 
 .stButton:active {
-    transform: translateY(0);  /* Reset lift effect on click */
+    transform: translateY(0);
 }
 
-/* Chatbot Styling */
+/* Primary Action Button */
+.stButton.primary {
+    background-color: var(--accent-color);
+}
+
+.stButton.primary:hover {
+    background-color: #c0392b;
+}
+
+/* Success Button */
+.stButton.success {
+    background-color: var(--success-color);
+}
+
+.stButton.success:hover {
+    background-color: #219955;
+}
+
+/* Chat Message Styling */
 .stMessage {
-    background-color: #f1f1f1;  /* Soft background for messages */
-    border-radius: 10px;
-    padding: 15px;
-    margin: 15px 0;
-    font-size: 16px;
+    background-color: var(--background-color);
+    border-radius: 8px;
+    padding: 1rem;
+    margin: 0.75rem 0;
+    font-size: 1rem;
     max-width: 75%;
-    box-sizing: border-box;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 
 .stUserMessage {
-    background-color: #d5006d; /* Dark Pink for user message */
+    background-color: var(--primary-color);
     color: white;
-    text-align: right;  /* Align user messages to the right */
     margin-left: 25%;
-    box-sizing: border-box;
+    border-bottom-right-radius: 0;
 }
 
 .stBotMessage {
-    background-color: #e3e3e3;  /* Light grey for bot messages */
-    color: #333;
-    text-align: left;  /* Align bot messages to the left */
+    background-color: white;
+    border: 1px solid #dfe6e9;
     margin-right: 25%;
-    box-sizing: border-box;
+    border-bottom-left-radius: 0;
+}
+
+/* Dataframe Styling */
+.stDataFrame {
+    border: 1px solid #dfe6e9;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+/* Alert/Info Boxes */
+.stAlert {
+    border-radius: 4px;
+    padding: 1rem;
+    margin: 1rem 0;
 }
 
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
     .stApp {
-        padding: 20px;
+        padding: 1rem;
+        margin: 0;
+        border-radius: 0;
     }
 
     .stTitle {
-        font-size: 28px;
-    }
-
-    .stSelectbox, .stNumberInput {
-        padding: 10px;
-        font-size: 14px;
-    }
-
-    .stButton {
-        padding: 12px 24px;
-        font-size: 14px;
+        font-size: 1.5rem;
     }
 
     .stMessage {
-        max-width: 100%;
+        max-width: 90%;
     }
 
     .stUserMessage, .stBotMessage {
-        margin-left: 0;
-        margin-right: 0;
-        text-align: left;
-        width: 100%;
+        margin-left: 10%;
+        margin-right: 10%;
     }
+}
 
-    /* Title styling adjustment on mobile */
-    .stTitle {
-        font-size: 24px;
-    }
+/* Utility Classes */
+.text-muted {
+    color: var(--text-light);
+}
+
+.text-center {
+    text-align: center;
+}
+
+.shadow-sm {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
